@@ -1,5 +1,7 @@
 import {useState, setState} from 'react';
 
+import {Link} from 'react-router-dom';
+
 function Signup(){
     let style={textDecoration: 'none'}
     var [enteredText, setEnteredText] = useState();
@@ -72,7 +74,7 @@ function Signup(){
         >
           Register
         </button>
-        <p className="mt-2">Already have an account? Login Here</p>
+        <p className="mt-2">Already have an account? <Link to="/login" style={style}>Login Here</Link></p>
       </form>
     </div>
     )

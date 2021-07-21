@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import {Link} from 'react-router-dom';
 
+let style={textDecoration: 'none'}
 class Login extends React.Component {
     constructor() {
         super();
@@ -8,7 +10,6 @@ class Login extends React.Component {
             errorMsg: null,
         }
     }
-    
   user = {};
  
   handleEmail =  (e) => {
@@ -38,6 +39,8 @@ class Login extends React.Component {
     this.setState({
         errorMsg: "Invalid Credentials"
     })
+
+    
   };
 
   render() {
@@ -76,7 +79,7 @@ class Login extends React.Component {
                 Login
               </button>
               
-              <p className="mt-2">Not have an account? create a new account</p>
+              <p className="mt-2">Not have an account? <Link to="/signup" style={style}>create a new account </Link></p>
             </div>
           </form>
         </div>

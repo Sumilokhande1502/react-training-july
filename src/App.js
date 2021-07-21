@@ -1,29 +1,38 @@
 import './App.css';
 import Navbar from './Navbar';
 import Login from './Login';
-import {Carousel} from './Carousel';
-import {Books} from './Books';
+import Signup from './Signup';
+import Search from './Search';
+import Cakelist from './CakeList';
+import CakeDetails from './CakeDetails';
+import AddCakeDetails from './AddCakeDetails';
+import Home from './Home';
+import PageNotFound from './PageNotFound';
+
+import {
+  BrowserRouter,
+  Route,
+  Switch
+} from "react-router-dom";
+
 
 function App() {
-  let Book1 = {
-    title:"ABC",
-    price: 600,
-    description:"test"
-  }
-  let Book2 = {
-    title:"XYZ",
-    price: 500,
-    description:"test"
-  }
+  
   return (
     <div>
-     <Navbar />
-     <Login />
-     <Carousel />
-      <div class="row">
-        <Books data={Book1}/>
-        <Books data={Book2} />
-      </div>
+      <BrowserRouter>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/search" component={Search} />
+          <Route path='/cake' exact component={Cakelist}/>
+          <Route path='/addcake' exact component={AddCakeDetails}/>
+          <Route path='/cake:id' exact component={CakeDetails}/>
+          <Route exact path="**" component={PageNotFound} />
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }

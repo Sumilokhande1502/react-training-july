@@ -1,6 +1,12 @@
-export function Books(props) {
+export function Cake(props) {
+  function showDetails() {
+    console.log("...........")
+    console.log("in show details", props);
+    props.history.push('/cake/'+props.data.cakeid)
+  }
   return (
     <div class="card" style={{ width: "16rem" }}>
+      <button onClick={showDetails}> Details </button>
       <img
         src="..."
         style={{ height: "18rem" }}

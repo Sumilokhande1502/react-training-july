@@ -1,6 +1,6 @@
-let carousel1 = "image1.jpg";
-let carousel2 = "image2.jpg";
-let carousel3 = "image3.jpg";
+let carousel1 = "carousel1.jpg";
+let carousel2 = "carousel2.png";
+let carousel3 = "carousel4.jpg";
 
 export function Carousel() {
   return (
